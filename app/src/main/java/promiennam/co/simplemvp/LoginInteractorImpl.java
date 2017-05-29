@@ -11,6 +11,8 @@ public class LoginInteractorImpl implements LoginInteractor {
 
     @Override
     public void login(final String username, final String password, final OnLoginFinishedListener listener) {
+        // This code below is a mock check for login via username, password
+        // You should replace it by your code
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -33,13 +35,22 @@ public class LoginInteractorImpl implements LoginInteractor {
     // facebook
     @Override
     public void loginWithFacebook(OnLoginFacebookFinishedListener listener) {
-        boolean result = false;
-        // handle login facebook here, facebook sdk will return the response
-        // if login facebook successfully set result = true, else set result = false
+        // This code below just is a mock, you should remove it
+        boolean result = true;
         if (result) {
             listener.onFacebookLoginSuccess();
         } else {
             listener.onFacebookLoginError();
         }
+
+        // Handle login facebook here, facebook sdk will return the response
+        //------------------------------------------------
+        // Todo: PUT YOUR CHECKING LOGIN VIA FACEBOOK CODE HERE
+        //------------------------------------------------
+        // It will check login in background and through callbacks
+        // You should code the logic in each callback function
+        // Such as, if on Success: listener.onFacebookLoginSuccess();
+        // If on Error: listener.onFacebookLoginError();
+        // ...
     }
 }
